@@ -21,5 +21,4 @@ if st.button('I wanna a easier explain about the chart'):
     with st.spinner('Wait for it...'):
         prompt = "You are an amazing financial analyst. As an analyst, analyze the stock chart information in detail and give me your brief opinion. and you should translate into korean here is the imformation"
         result = chat_model.predict(prompt + content )
-        st.write(":pencil:"+ content)
         st.write(result)
