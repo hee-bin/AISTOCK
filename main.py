@@ -10,15 +10,16 @@ import streamlit as st
 from langchain.chat_models import ChatOpenAI
 chat_model = ChatOpenAI()
 
-st.title('welcome to make your own poem!')
-st.write('Hello, *World!* :sunglasses:')
+st.title('AI report')
+st.write('Welcome! :sunglasses:')
 
 
 
-content = st.text_input('MAKING A COOOL POEM')
+content = st.text_input('It is supposed to be with a stock chart ')
 
-if st.button('submit'):
+if st.button('I wanna a easier explain about the chart'):
     with st.spinner('Wait for it...'):
-        result = chat_model.predict("write a poem about" + content )
+        prompt = "You are an amazing financial analyst. As an analyst, analyze the stock chart information in detail and give me your brief opinion. here is the imformation"
+        result = chat_model.predict(prompt + content )
         st.write("subject is "+ content)
         st.write(result)
